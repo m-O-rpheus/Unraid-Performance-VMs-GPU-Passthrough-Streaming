@@ -62,6 +62,7 @@ Nach dem Speichern der VM-Einstellungen muss die XML-Konfiguration angepasst wer
 
 Diese Anpassung funktioniert sowohl bei NVIDIA- als auch bei Intel-GPUs.
 
+```xml
   <features>
     <acpi/>
     <apic/>
@@ -74,6 +75,7 @@ Diese Anpassung funktioniert sowohl bei NVIDIA- als auch bei Intel-GPUs.
     <topology sockets='1' dies='1' clusters='1' cores='20' threads='1'/>
     <cache mode='passthrough'/>
   </cpu>
+```
 
 Zusätzlich muss der passende GPU-Treiber des Herstellers innerhalb der VM installiert werden.
 
