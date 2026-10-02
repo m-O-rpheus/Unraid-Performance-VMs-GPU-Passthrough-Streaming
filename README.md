@@ -64,27 +64,20 @@ Diese Anpassung funktioniert sowohl bei NVIDIA- als auch bei Intel-GPUs.
 
 ```xml
   <os>
+    ...
     <smbios mode='host'/>
   </os>
   <features>
     <acpi/>
     <apic/>
-    <hyperv mode='custom'>
-      <relaxed state='on'/>
-      <vapic state='on'/>
-      <spinlocks state='on' retries='8191'/>
-      <vpindex state='on'/>
-      <synic state='on'/>
-      <stimer state='on'/>
-      <vendor_id state='on' value='none'/>
-    </hyperv>
+    <hyperv mode="passthrough"/>
     <kvm>
       <hidden state='on'/>
     </kvm>
   </features>
   <cpu mode='host-passthrough' check='none' migratable='off'>
+    <topology sockets='1' dies='1' clusters='1' cores='20' threads='1'/>
     <cache mode='passthrough'/>
-    <feature policy='disable' name='hypervisor'/>
   </cpu>
 ```
 
