@@ -9,16 +9,30 @@ Diese Anleitung beschreibt die Einrichtung einer Windows 11 Virtual Machine mit 
 
 ---
 
-## 1. Erstellung der Standard-VM
+## 1. Virtuelle Maschine
 
-Zuerst wird eine Standard-VM in Unraid erstellt. Dabei müssen folgende Einstellungen beachtet werden:
+**Erstellung der virtuellen Maschine:**
+Zunächst wird eine Standard-VM in Unraid erstellt. Dabei sollten folgende Einstellungen vorgenommen werden:
 
-- Initial Memory und Max Memory müssen identisch sein
+- Initial Memory / Max Memory: Beide Werte müssen identisch sein.
 - Machine Type: Q35-10.2
-- Migratable: ON
+- Migratable: OFF
+- BIOS: OVMF TPM
 - Hyper-V: Enabled (Yes)
 
-Zusätzlich sollte eine ausreichende Anzahl an CPU-Kernen sowie genügend RAM zugewiesen werden, damit das Betriebssystem stabil und performant arbeiten kann.
+Zusätzlich müssen ausreichend CPU-Kerne und Arbeitsspeicher zugewiesen werden, damit das Betriebssystem stabil und performant arbeiten kann. Für Windows 11 sollten mindestens 10 GB RAM eingeplant werden.
+
+**Virtuelle Festplatte:**
+Um eine möglichst hohe Festplattenperformance zu erreichen, sollten für die virtuelle Festplatte folgende Einstellungen verwendet werden:
+
+- vDisk Type: raw
+- vDisk Bus: VirtIO
+- Discard: Unmap (TRIM)
+
+**Netzwerkkonfiguration:**
+Für eine möglichst hohe Netzwerkperformance sollte folgendes Netzwerkmodell verwendet werden:
+
+- Network Model: virtio
 
 ---
 
